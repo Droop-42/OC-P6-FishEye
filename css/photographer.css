@@ -109,6 +109,19 @@ form input {
     justify-content: space-between;
 }
 
+.sample-txt button{
+    outline: none;
+    background: transparent;
+    border: 1px solid transparent;
+}
+
+.sample-txt button:focus{
+    /*outline: #D3573C;*/
+    background: transparent;
+    border: 2px solid #DB8876;
+    border-radius: 5px;
+  }
+
 .sample {
     display: flex;
     flex-direction: column;
@@ -276,6 +289,7 @@ form input {
 .material-symbols-outlined {
     font-size: 20px !important;
     font-variation-settings:'FILL' 0;
+    color: #901C1C;
 }
 
 
@@ -373,29 +387,35 @@ form input {
 
 .media-sample .close {
     position: relative;
-    /*left: 40px;*/
+    align-self: flex-start;
     
 }
 
 .media-sample .arrowL{
-    display: flex;
-    align-items: center;
-    padding-bottom: 50px;
-    margin-right: 30px;
+    position: relative;
+    align-self: center;
+    top: -50px;
+    left: 0px;
 }
 
 .media-sample .arrowR{
-    display: flex;
-    align-items: center;
-    padding-bottom: 50px;
+    position: relative;
+    align-self: center;
+    top: -50px;
+    right: 45px;
 }
 
-
-
-.media-sample span{
-    padding-bottom: 50px;
+.media-sample button{
     font-size: 40px !important;
     color: #901C1C;
     font-weight: 800;
     cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.media-sample .media{
+    max-width: 100%;
+    height: auto;
+    max-height: 700px;
 }

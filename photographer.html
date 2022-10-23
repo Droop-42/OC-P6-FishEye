@@ -15,7 +15,7 @@
         <img src="assets/images/logo.png" class="logo" />
       </a>
     </header>
-    <main id="main">
+    <main id="main" aria-hidden="false" >
       <div class="photograph-header">
         <!--script src="scripts/factories/photographer.js"></script-->
       </div>
@@ -29,9 +29,9 @@
         </div>
       </div>
     
-      <div class="medias" id="medias">
+      <section class="medias" id="medias">
         <!--script src="scripts/factories/pagePerso.js"></script-->
-      </div>
+      </section>
       <div class="likes-box">
         <div class="contain">
           <div class="containerL">
@@ -48,7 +48,7 @@
     </main>
     <div class="background-contact">
       <div id="contact_modal">
-        <div class="modal">
+        <div class="modal" aria-hidden="true" role="dialog">
           <header>
             <h2>Contactez-moi</h2>
             <img src="assets/icons/close.svg" id="close" onclick="closeModal()" />
