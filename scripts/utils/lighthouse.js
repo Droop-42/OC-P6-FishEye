@@ -137,8 +137,8 @@
               case "Escape":
                 closeLModal()
                 break;
-              case "Enter":
-                break;
+              //case "Enter":
+                //break;
               default:
                 return; // Quit when this doesn't handle the key event.
             }

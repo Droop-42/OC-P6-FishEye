@@ -1,0 +1,88 @@
+.sample-txt {
+    display: flex;
+    flex-direction: row;
+    color: #901C1C;
+    font-size: 11px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sample-txt button{
+    outline: none;
+    background: transparent;
+    border: 1px solid transparent;
+}
+
+.sample-txt button:focus-visible{
+    /*outline: #D3573C;*/
+    background: transparent;
+    border: 2px solid #DB8876;
+    border-radius: 5px;
+  }
+
+.sample {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.likes-nbr {
+    font-size: 18px;
+}
+
+
+.likes-box {
+    position: fixed;
+    width: 300px;
+    height: 40px;
+    bottom: 0;
+    right: 40px;
+    background-color: #DB8876;
+    border-radius: 3px 3px 0 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.contain {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.containerL {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 100%;
+    /*padding: 0 10px;*/
+    width: 50%;
+}
+.containerR {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: right;
+    height: 100%;
+    /*padding: 0 10px;*/
+    width: 50%;
+}
+
+.containerL .material-symbols-outlined {
+    font-size: 20px !important;
+    font-variation-settings:'FILL' 1;
+    padding-left: 5px;
+}
+
+.likes-box span {
+    /*display: flex;
+    flex-direction: row;*/
+    /*width: 50%;*/
+}
+
+.material-symbols-outlined {
+    font-size: 20px !important;
+    font-variation-settings:'FILL' 0;
+    color: #901C1C;
+}
