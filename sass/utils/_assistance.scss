@@ -1,0 +1,11 @@
+/*[aria-hidden="true"] { 
+    visibility: hidden; 
+}*/ 
+
+img:focus-visible, a:focus-visible,  form:focus-visible  { 
+    outline: 0px transparent !important;
+    border: 2px solid #DB8876;
+    border-radius: 2px;
+}
+
+    

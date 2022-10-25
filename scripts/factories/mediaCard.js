@@ -20,15 +20,15 @@ function pagePersoFactory(media ,name, index, medias) {
     const modalbg = document.querySelector(".background-lighthouse");
 
     function launchModal(e) {
-        if (e.defaultPrevented) {
-            return; // Do nothing if the event was already processed
-          }
         modalbg.style.display = "block";
         console.log('name', name)
         const lhSection = document.querySelector(".lighthouse_modal");
         const lighthouseDOM = getLighthouseDOM(image, video, title, name, index, medias);
         console.log(lighthouseDOM)
         lhSection.appendChild(lighthouseDOM);
+        document.getElementById('main').setAttribute("aria-hidden", 'true');
+        document.getElementById('arrowR').focus();
+        focusTrap('#lh');
         e.preventDefault();
     }
 
@@ -79,12 +79,12 @@ function pagePersoFactory(media ,name, index, medias) {
         like.classList.add('likes');
         like.textContent = likes;
         like.classList.add('likes-nbr');
-        const button = document.createElement( 'button' );
-        const icon = document.createElement( 'span' );
+;
+        const icon = document.createElement( 'button' );
         icon.classList.add('material-symbols-outlined');
         icon.setAttribute("id", id);
         icon.setAttribute("filled", 'notFilled');
-        button.addEventListener('click', addLike);
+        icon.addEventListener('click', addLike);
         //icon.classList.add('btn-favorite');
         icon.textContent = 'favorite';
 
@@ -93,8 +93,7 @@ function pagePersoFactory(media ,name, index, medias) {
         article.appendChild(link);
         div.appendChild(h2);
         div2.appendChild(like);
-        button.appendChild(icon);
-        div2.appendChild(button);       
+        div2.appendChild(icon);       
         div.appendChild(div2);
         article.appendChild(div);
         return (article);

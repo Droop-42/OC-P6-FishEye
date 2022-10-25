@@ -9,13 +9,11 @@ function persoHeaderFactory(data) {
     function launchContactModal() {
         modalbgContact.style.display = "block";
         displayModal()
-        console.log('click')
     }
 
     function closeContactModal() {
         modalbgContact.style.display = "none";
         closeModal()
-        console.log('click')
     }
 
     //contactBtn.addEventListener('click', launchContactModal);

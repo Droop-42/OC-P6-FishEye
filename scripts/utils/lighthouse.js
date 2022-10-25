@@ -2,7 +2,7 @@
 
     function getLighthouseDOM(image, video, title, name, index, medias) {
 
-        //Variables
+        //------------------------------------Variables-------------------------------------------
         const modalbgContact = document.querySelector(".background-lighthouse");
         const pictureSrc = `assets/SamplePhotos/${name}/${image}`;
         const videoSrc = `assets/SamplePhotos/${name}/${video}`;
@@ -10,7 +10,8 @@
         let imgIndex = index;
         //let Type = getType(image, video);
 
-        //Functions    
+        //-------------------------------------Functions-------------------------------------------
+        //Get type of media (Image or video)--------------------     
         function getType(image, video) {
             if (image) {
                 console.log('image')
@@ -21,12 +22,14 @@
             } else {
                 console.log('unknow media type')
             }
-        }   
+        } 
+        //Close the carrousel--------------------     
         function closeLModal() {
             let lh = document.getElementById('lh');
             lh.removeChild(article);
             modalbgContact.style.display = "none";
             window.removeEventListener("keydown", handleKeys, true);
+            document.getElementById('main').setAttribute("aria-hidden", 'false');
 
         } 
         //Get next Image from index--------------------     
@@ -193,6 +196,8 @@
         arrowR.textContent = 'arrow_forward_ios';
         arrowR.classList.add('arrowR');
         arrowR.addEventListener('click', nextImg);
+        arrowR.setAttribute("id", 'arrowR');
+        
 
         article.appendChild(arrowL);
         div.appendChild(img);
