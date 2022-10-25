@@ -1,10 +1,10 @@
 function photographerFactory(data) {
     const { name, id, city, country, tagline, price, portrait } = data;
 
-    const picture = `assets/photographers/${portrait}`;
+    const picture = `./assets/photographers/${portrait}`;
 
     function redirect() {
-    location.href = "/photographer.html?id="+id;
+    location.href = "./photographer.html?id="+id;
     }
 
     function getUserCardDOM() {
