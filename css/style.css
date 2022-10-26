@@ -353,7 +353,11 @@ form input {
 }
 
 .pricing {
-  color: gray;
+  color: rgb(65, 65, 65);
+}
+
+.photographer p {
+  margin: 0;
 }
 
 .container {
@@ -399,12 +403,6 @@ form input {
   border-bottom: 2px solid #fff;
 }
 
-/*
-.select.active{
-    background: #DB8876;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-}*/
 .options {
   position: absolute;
   top: 40px;
@@ -444,6 +442,7 @@ form input {
   grid-template-columns: 1fr 1fr 1fr;
   gap: 70px;
   margin-top: 100px;
+  margin-bottom: 50px;
 }
 
 .photographer_section article {
