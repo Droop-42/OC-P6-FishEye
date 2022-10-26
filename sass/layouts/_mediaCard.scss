@@ -38,7 +38,7 @@
 .likes-box {
     position: fixed;
     width: 300px;
-    height: 40px;
+    height: 60px;
     bottom: 0;
     right: 40px;
     background-color: #DB8876;
@@ -51,7 +51,7 @@
     display: flex;
     align-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 20px;
     justify-content: space-between;
 }
 
@@ -62,6 +62,10 @@
     height: 100%;
     /*padding: 0 10px;*/
     width: 50%;
+    & span {
+    color: black;
+    }
+    
 }
 .containerR {
     display: flex;

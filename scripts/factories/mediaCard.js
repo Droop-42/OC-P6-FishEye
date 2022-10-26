@@ -52,22 +52,34 @@ function pagePersoFactory(media ,name, index, medias) {
         article.classList.add('sample');
         //article.addEventListener('click', launchModal);
 
+        const icon = document.createElement( 'button' );
+        icon.classList.add('material-symbols-outlined');
+        icon.setAttribute("id", id);
+        icon.setAttribute("filled", 'notFilled');
+        icon.addEventListener('click', addLike);
+        //icon.classList.add('btn-favorite');
+        icon.textContent = 'favorite';
+
 
         const link = document.createElement( 'a' );
         link.setAttribute("href", "")
         link.addEventListener('click', launchModal);
+        link.setAttribute("alt", 'lien vers carrousel');
         const img = document.createElement( getPictureType(image, video) );
-        //img.setAttribute("tabindex", "");
         img.setAttribute("src", pictureSrc);
         if (mediaType === 'video') {
             img.setAttribute("src", videoSrc)
             img.setAttribute("poster", "")
             img.setAttribute("tabindex", "-1");
+            img.setAttribute("alt", videoSrc.match(/\w*(?=.\w+$)/));
+            link.setAttribute("alt", videoSrc.match(/\w*(?=.\w+$)/));
+            icon.setAttribute("aria-label", 'Donnez un like à '+ videoSrc.match(/\w*(?=.\w+$)/));
         } else {
-            img.setAttribute("src", pictureSrc)
+            img.setAttribute("src", pictureSrc);
+            img.setAttribute("alt", pictureSrc.match(/\w*(?=.\w+$)/));
+            link.setAttribute("alt", pictureSrc.match(/\w*(?=.\w+$)/));
+            icon.setAttribute("aria-label", 'Donnez un like à '+ pictureSrc.match(/\w*(?=.\w+$)/));
         }
-
-
 
         const div = document.createElement( 'div' );
         div.classList.add('sample-txt');
@@ -80,13 +92,7 @@ function pagePersoFactory(media ,name, index, medias) {
         like.textContent = likes;
         like.classList.add('likes-nbr');
 ;
-        const icon = document.createElement( 'button' );
-        icon.classList.add('material-symbols-outlined');
-        icon.setAttribute("id", id);
-        icon.setAttribute("filled", 'notFilled');
-        icon.addEventListener('click', addLike);
-        //icon.classList.add('btn-favorite');
-        icon.textContent = 'favorite';
+        
 
 
         link.appendChild(img);

@@ -6,9 +6,14 @@ header {
     height: 90px;
 }
 
+header a {
+    position: relative;
+    left: 100px;
+}
+
 .logo {
     height: 50px;
-    margin-left: 100px;
+    /*margin-left: 100px;*/
 }
 
 .photograph-header {

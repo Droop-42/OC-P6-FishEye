@@ -35,9 +35,14 @@ header {
   height: 90px;
 }
 
+header a {
+  position: relative;
+  left: 100px;
+}
+
 .logo {
   height: 50px;
-  margin-left: 100px;
+  /*margin-left: 100px;*/
 }
 
 .photograph-header {
@@ -122,7 +127,7 @@ header {
 .likes-box {
   position: fixed;
   width: 300px;
-  height: 40px;
+  height: 60px;
   bottom: 0;
   right: 40px;
   background-color: #DB8876;
@@ -135,7 +140,7 @@ header {
   display: flex;
   align-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 20px;
   justify-content: space-between;
 }
 
@@ -146,6 +151,9 @@ header {
   height: 100%;
   /*padding: 0 10px;*/
   width: 50%;
+}
+.containerL span {
+  color: black;
 }
 
 .containerR {
@@ -471,6 +479,7 @@ form input {
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 20px 100px;
+  padding-bottom: 50px;
   gap: 30px;
 }
 

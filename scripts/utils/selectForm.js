@@ -18,7 +18,7 @@ options.forEach((item, i) => {
     item.onmousemove = () => {
         hoverOptions(i);
     }
-})
+}) 
 
 const hoverOptions = (i) => {
     options[activeOption].classList.remove('active');

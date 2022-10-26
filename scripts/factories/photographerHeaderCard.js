@@ -42,7 +42,8 @@ function persoHeaderFactory(data) {
         contactBtn.addEventListener('click', launchContactModal);
 
         const img = document.createElement( 'img' );
-        img.setAttribute("src", picture)
+        img.setAttribute("src", picture);
+        img.setAttribute("alt", 'Portrait de '+ name)
 
         
         div.appendChild(h2);
