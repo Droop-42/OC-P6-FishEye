@@ -16,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/Droop-42/OC-P6-FishEye/issues"
   },
-  "homepage": "https://github.com/Droop-42/OC-P6-FishEye#readme"
+  "homepage": "https://github.com/Droop-42/OC-P6-FishEye#readme",
+  "devDependencies": {
+    "eslint": "^8.26.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.3.0",
+    "eslint-plugin-promise": "^6.1.1"
+  }
 }
