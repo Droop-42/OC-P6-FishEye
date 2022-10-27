@@ -43,7 +43,7 @@ function persoHeaderFactory(data) {
 
         const img = document.createElement( 'img' );
         img.setAttribute("src", picture);
-        img.setAttribute("alt", 'Portrait de '+ name)
+        img.setAttribute("alt", 'Portrait de '+ name);
 
         
         div.appendChild(h2);

@@ -1,9 +1,10 @@
+//Variables
 const select = document.querySelector('.select');
 const optionBox = document.querySelector('.options');
 const options = [...document.querySelectorAll('.options .item')];
+let activeOption = 0; // First option in the list
 
-let activeOption = 0; // default should be 0
-
+//Handle click event on the menu filter (select)
 window.onclick = (e) => {
     if(!e.target.className.includes('select')){
         select.classList.remove('active');
@@ -14,35 +15,21 @@ window.onclick = (e) => {
     }
 }
 
-options.forEach((item, i) => {
-    item.onmousemove = () => {
-        hoverOptions(i);
-    }
-}) 
-
-const hoverOptions = (i) => {
-    options[activeOption].classList.remove('active');
-    options[i].classList.add('active');
-    activeOption = i;
-    setValue();
-}
-
-window.onkeydown = (e) => {
-    if(select.className.includes('active')){
-        e.preventDefault();
-        if(e.key === 'ArrowDown' && activeOption < options.length - 1){
-            hoverOptions(activeOption + 1);
-        } else if(e.key === 'ArrowUp' && activeOption > 0){
-            hoverOptions(activeOption - 1);
-        } else if(e.key === 'Enter'){
-            select.classList.remove('active');
-            optionBox.classList.remove('active');
-        }
-    }
-}
-
+//Set value of chosen filter option
 const setValue = () => {
     select.innerHTML = select.value = options[activeOption].innerHTML;
 }
 
+//For each option, set value if cliked
+options.forEach((item, i) => {
+    item.onclick = () => {
+        options[activeOption].classList.remove('active');
+        options[i].classList.add('active');
+        activeOption = i;
+        setValue();
+    }
+}) 
+
+//Set initial value
 setValue();
+
