@@ -2,7 +2,7 @@
 // eslint-disable-next-line no-unused-vars
 function getLighthouseDOM (image, video, title, name, index, medias) {
   // ------------------------------------Variables-------------------------------------------
-  const modalbgContact = document.querySelector('.background-lighthouse')
+  const modalbgLh = document.querySelector('.background-lighthouse')
   const pictureSrc = `assets/SamplePhotos/${name}/${image}`
   const videoSrc = `assets/SamplePhotos/${name}/${video}`
   const mediasLength = medias.length
@@ -12,10 +12,8 @@ function getLighthouseDOM (image, video, title, name, index, medias) {
   // Get type of media (Image or video)--------------------
   function getType (image, video) {
     if (image) {
-      console.log('image')
       return 'img'
     } else if (video) {
-      console.log('video')
       return 'video'
     } else {
       console.log('unknow media type')
@@ -25,7 +23,7 @@ function getLighthouseDOM (image, video, title, name, index, medias) {
   function closeLModal () {
     const lh = document.getElementById('lh')
     lh.removeChild(article)
-    modalbgContact.style.display = 'none'
+    modalbgLh.style.display = 'none'
     window.removeEventListener('keydown', handleKeys, true)
     document.getElementById('main').setAttribute('aria-hidden', 'false')
   }

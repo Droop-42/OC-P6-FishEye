@@ -1,5 +1,8 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 // eslint-disable-next-line no-unused-vars
 function displayModal () {
+  document.querySelector('.background-contact').style.display = 'block'
   const modal = document.getElementById('contact_modal')
   modal.style.display = 'block'
   document.getElementById('main').setAttribute('aria-hidden', 'true')
@@ -8,11 +11,25 @@ function displayModal () {
 
 // eslint-disable-next-line no-unused-vars
 function closeModal () {
+  document.querySelector('.background-contact').style.display = 'none'
   const modal = document.getElementById('contact_modal')
   modal.style.display = 'none'
   document.getElementById('main').setAttribute('aria-hidden', 'false')
 }
 
+function submitContact (e) {
+  document.querySelector('.background-contact').style.display = 'none'
+  const modal = document.getElementById('contact_modal')
+  modal.style.display = 'none'
+  document.getElementById('main').setAttribute('aria-hidden', 'false')
+  console.log('first name:', first.value)
+  console.log('last name:', last.value)
+  console.log('e-mail:', email.value)
+  console.log('message:', comment.value)
+  e.preventDefault()
+}
+
+// Trap the focus inside the modal
 function focusTrap (idModal) {
   // add all the elements inside modal which you want to make focusable
   const focusableElements =

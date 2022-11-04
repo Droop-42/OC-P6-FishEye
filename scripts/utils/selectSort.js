@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+// ------------Sort menu----------------------
 // Variables
 const select = document.querySelector('.select')
 const optionBox = document.querySelector('.options')
@@ -29,3 +31,35 @@ options.forEach((item, i) => {
 })
 // Set initial option
 setValue()
+
+// ------------Sort Algo----------------------
+function sortMedias (medias) {
+  if (document.getElementById('select').textContent === 'Popularité') {
+    const sortedMedias = medias.sort((a, b) => {
+      return b.likes - a.likes
+    })
+    return sortedMedias
+  } else if (document.getElementById('select').textContent === 'Date') {
+    const sortedMedias = medias.sort((a, b) => {
+      const da = new Date(a.date)
+      const db = new Date(b.date)
+      return da - db
+    })
+    console.log('nopop', document.getElementById('select').textContent)
+    return sortedMedias
+  } else if (document.getElementById('select').textContent === 'Titre') {
+    const sortedMedias = medias.sort((a, b) => {
+      const fa = a.title.toLowerCase()
+      const fb = b.title.toLowerCase()
+      if (fa < fb) {
+        return -1
+      }
+      if (fa > fb) {
+        return 1
+      }
+      return 0
+    })
+    console.log('nopop', document.getElementById('select').textContent)
+    return sortedMedias
+  }
+}
