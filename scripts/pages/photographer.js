@@ -31,6 +31,34 @@ function getTotalLikes (medias) {
   return totalLikes
 }
 
+function addLike (id) {
+  const iconLike = document.getElementById(id)
+  let totalLikes = document.querySelector('.likes-counter').textContent
+  // eslint-disable-next-line no-new-wrappers
+  totalLikes = new Number(totalLikes)
+  if (iconLike.getAttribute('filled') === 'filled') {
+    iconLike.style.fontVariationSettings = '"FILL" 0'
+    iconLike.setAttribute('filled', 'notFilled')
+    document.querySelector('.likes-counter').textContent = totalLikes - 1
+  } else if (iconLike.getAttribute('filled') === 'notFilled') {
+    iconLike.style.fontVariationSettings = '"FILL" 1'
+    iconLike.setAttribute('filled', 'filled')
+    document.querySelector('.likes-counter').textContent = totalLikes + 1
+  }
+}
+
+function launchCarrousel (media, photographer, index, medias) {
+  document.querySelector('.background-lighthouse').style.display = 'block'
+  const lhSection = document.querySelector('.lighthouse_modal')
+  const lighthouseDOM = getLighthouseDOM(media.image, media.video, media.title, photographer.name, index, medias)
+
+  lhSection.appendChild(lighthouseDOM)
+  document.getElementById('main').setAttribute('aria-hidden', 'true')
+  document.getElementById('arrowR').focus()
+
+  focusTrap('#lh')
+}
+
 async function displayDataPhotographer (photographer) {
   // -----------------Create header-------------------------
   const photographersSection = document.querySelector('.photograph-header')
@@ -66,41 +94,11 @@ async function displayData (photographer, medias) {
     // Display card in the DOM
     mediasSection.appendChild(mediaCardDOM)
 
-    // ---------------
-    function launchCarrousel (e) {
-      document.querySelector('.background-lighthouse').style.display = 'block'
-      const lhSection = document.querySelector('.lighthouse_modal')
-      const lighthouseDOM = getLighthouseDOM(media.image, media.video, media.title, photographer.name, index, medias)
-
-      lhSection.appendChild(lighthouseDOM)
-      document.getElementById('main').setAttribute('aria-hidden', 'true')
-      document.getElementById('arrowR').focus()
-
-      focusTrap('#lh')
+    document.getElementById('link' + index).addEventListener('click', (e) => {
+      launchCarrousel(media, photographer, index, medias)
       e.preventDefault()
-    }
-    // ---------------
-
-    function addLike () {
-      const iconLike = document.getElementById(media.id)
-      let totalLikes = document.querySelector('.likes-counter').textContent
-      // eslint-disable-next-line no-new-wrappers
-      totalLikes = new Number(totalLikes)
-      if (iconLike.getAttribute('filled') === 'filled') {
-        iconLike.style.fontVariationSettings = '"FILL" 0'
-        iconLike.setAttribute('filled', 'notFilled')
-        document.querySelector('.likes-counter').textContent = totalLikes - 1
-      } else if (iconLike.getAttribute('filled') === 'notFilled') {
-        iconLike.style.fontVariationSettings = '"FILL" 1'
-        iconLike.setAttribute('filled', 'filled')
-        document.querySelector('.likes-counter').textContent = totalLikes + 1
-      }
-    }
-
-    // -------------------
-
-    document.getElementById('link' + index).addEventListener('click', launchCarrousel)
-    document.getElementById(media.id).addEventListener('click', addLike)
+    })
+    document.getElementById(media.id).addEventListener('click', (event) => { addLike(media.id) })
   })
 
   document.querySelector('.likes-counter').textContent = getTotalLikes(medias)
@@ -115,7 +113,7 @@ async function init () {
   // Get data from photographer with Id sent
   const photographer = photographerMod.filter(d => d.id == getId())
   const medias = mediasMod.filter(d => d.photographerId == getId())
-  // console.log('1',sortMedias(medias))
+
   displayDataPhotographer(photographer[0])
   displayData(photographer[0], sortMedias(medias))
 
