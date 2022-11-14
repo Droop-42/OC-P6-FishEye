@@ -1,35 +1,38 @@
 <!DOCTYPE html>
 <html lang="Fr">
   <head>
-    <link href="css/prefixed/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/prefixed/style.css" rel="stylesheet" type="text/css">
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
     <title>Fisheye - photographe </title>
   </head>
   <body>
     <header>
-      <a href="./index.html" autofocus>
-        <img src="assets/images/logo.png" class="logo" alt="logo - lien vers page accueil"/>
+      <a href="./index.html" aria-label="lien vers page accueil" autofocus>
+        <img src="assets/images/logo.png" class="logo" alt="">
       </a>
     </header>
-    <main id="main" aria-hidden="false" >
-      <section class="photograph-header">
-      </section>
-      <div class="container">
-        <span class="label">Trier par </span>
-        <button class="select" id="select" name="select" value="options">options</button>
+    <main id="main" aria-hidden="false">
+      <div class="photograph-header"  role="presentation" aria-label="Présentation du photographe">
+        <h2 class="nd">Présentation photographe</h2>
+      </div>
+      <div class="container" role="presentation" aria-label="Trier par">
+        <span class="label" >Trier par </span>
+        <button class="select" id="select" name="select" value="options" aria-haspopup="true" aria-expanded="false" >options</button>
         <div class="options">
-            <button class="item active" tabindex="0">Popularité</button>
-            <button class="item" tabindex="0">Date</button>
-            <button class="item" tabindex="0">Titre</button>
+            <button class="item active" tabindex="0" role="option" aria-selected="true" aria-label="Trier par popularité">Popularité</button>
+            <button class="item" tabindex="0" role="option" aria-selected="false" aria-label="Trier par date">Date</button>
+            <button class="item" tabindex="0" role="option" aria-selected="false" aria-label="Trier par titre">Titre</button>
         </div>
       </div>
     
       <section class="medias" id="medias">
+        <h2 class="nd">Aperçus medias</h2>
       </section>
       <section class="likes-box">
+        <h2 class="nd">Total likes</h2>
         <div class="contain">
           <div class="containerL">
             <span class="likes-counter"></span>
@@ -43,29 +46,29 @@
     </main>
     <div class="background-contact">
       <div id="contact_modal">
-        <div class="modal" aria-hidden="false" role="dialog">
+        <div class="modal" aria-hidden="false" aria-label="Contactez-moi" role="dialog">
           <header>
             <h2>Contactez-moi</h2>
-            <button  id="close">
-              <img src="assets/icons/close.svg" alt='close modal' />
+            <button  id="close" aria-label="Fermer le formulaire">
+              <img src="assets/icons/close.svg" alt=''>
             </button>
           </header>
           <form id="contactForm">
             <div class="formData" data-error="" data-error-visible="false">
               <label class="text-label" for="first">Prénom</label>
-              <input class="text-control" type="text" id="first" name="first" />
+              <input class="text-control" type="text" id="first" name="first" required>
             </div>
             <div class="formData" data-error="" data-error-visible="false">
               <label class="text-label" for="last">Nom</label>
-              <input class="text-control" type="text" id="last" name="last" />
+              <input class="text-control" type="text" id="last" name="last" required>
             </div>
             <div class="formData" data-error="" data-error-visible="false">
               <label class="text-label" for="email">E-mail</label>
-              <input class="text-control" type="email" id="email" name="email" />
+              <input class="text-control" type="email" id="email" name="email" required>
             </div>
             <div class="formData" data-error="" data-error-visible="false">
               <label class="text-label" for="comment">Votre message</label>
-              <textarea name="comment" id="comment" name="comment"></textarea>
+              <textarea name="comment" id="comment" ></textarea>
             </div>
             <button class="contact_button" type="submit">Envoyer</button>
           </form>

@@ -26,6 +26,7 @@ function getLighthouseDOM (image, video, title, name, index, medias) {
     modalbgLh.style.display = 'none'
     window.removeEventListener('keydown', handleKeys, true)
     document.getElementById('main').setAttribute('aria-hidden', 'false')
+    document.getElementsByClassName('contact_button')[0].focus()
   }
   // Scroll the carroussel and set the next/preview media
   function scroll () {
@@ -114,7 +115,7 @@ function getLighthouseDOM (image, video, title, name, index, medias) {
 
   // ---------------------Create DOM -------------------------------------------------------------------------------------------
   // Lighthouse container
-  const article = document.createElement('article')
+  const article = document.createElement('div')
   article.classList.add('media-sample')
 
   // Left arrow
@@ -123,6 +124,7 @@ function getLighthouseDOM (image, video, title, name, index, medias) {
   arrowL.textContent = 'arrow_back_ios'
   arrowL.classList.add('arrowL')
   arrowL.addEventListener('click', previewImg)
+  arrowL.setAttribute('aria-label', 'précédent')
 
   // Media container (image + titre)
   const div = document.createElement('div')
@@ -146,6 +148,7 @@ function getLighthouseDOM (image, video, title, name, index, medias) {
   close.textContent = 'close'
   close.classList.add('close')
   close.addEventListener('click', closeLModal)
+  close.setAttribute('aria-label', 'fermer le carrousel')
 
   // Right arrow
   const arrowR = document.createElement('button')
@@ -154,6 +157,7 @@ function getLighthouseDOM (image, video, title, name, index, medias) {
   arrowR.classList.add('arrowR')
   arrowR.addEventListener('click', nextImg)
   arrowR.setAttribute('id', 'arrowR')
+  arrowR.setAttribute('aria-label', 'suivant')
 
   article.appendChild(arrowL)
   div.appendChild(img)

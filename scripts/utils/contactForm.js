@@ -15,6 +15,7 @@ function closeModal () {
   const modal = document.getElementById('contact_modal')
   modal.style.display = 'none'
   document.getElementById('main').setAttribute('aria-hidden', 'false')
+  document.getElementsByClassName('contact_button')[0].focus()
 }
 
 function submitContact (e) {

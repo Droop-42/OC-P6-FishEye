@@ -14,6 +14,7 @@ window.onclick = (e) => {
   } else {
     select.classList.toggle('active')
     optionBox.classList.toggle('active')
+    select.setAttribute('aria-expanded', 'true')
   }
 }
 // Set value of chosen filter option
@@ -24,7 +25,11 @@ const setValue = () => {
 options.forEach((item, i) => {
   item.onclick = () => {
     options[activeOption].classList.remove('active')
+    options[activeOption].setAttribute('aria-selected', 'false')
     options[i].classList.add('active')
+    options[i].setAttribute('aria-selected', 'true')
+    select.setAttribute('aria-expanded', 'false')
+    select.focus()
     activeOption = i
     setValue()
   }

@@ -17,11 +17,11 @@ class MediaCard {
       mediaDOM = `<video src="./assets/SamplePhotos/${this._photographer.name}/${this._media.video}" type="image" tabindex=-1 poster='' aria-label="${this._media.title}" alt="${this._media.title}" ></video>`
     }
 
-    const $wrapper = document.createElement('article')
+    const $wrapper = document.createElement('div')
     $wrapper.classList.add('sample')
 
     const mediaCard = `
-      <a tabindex=0 href="" id="link${this._index}" aria-label="lien vers le carrousel">
+      <a tabindex=0 href="" id="link${this._index}" aria-label="Média ${this._media.title} -  lien vers le carrousel">
       ${mediaDOM}
       </a>
       <div class='sample-txt'>

@@ -54,7 +54,7 @@ function launchCarrousel (media, photographer, index, medias) {
 
   lhSection.appendChild(lighthouseDOM)
   document.getElementById('main').setAttribute('aria-hidden', 'true')
-  document.getElementById('arrowR').focus()
+  // document.getElementById('arrowR').focus()
 
   focusTrap('#lh')
 }
@@ -62,7 +62,7 @@ function launchCarrousel (media, photographer, index, medias) {
 async function displayDataPhotographer (photographer) {
   // -----------------Create header-------------------------
   const photographersSection = document.querySelector('.photograph-header')
-  const $wrapper = document.createElement('article')
+  const $wrapper = document.createElement('div')
   $wrapper.classList.add('perso-card')
 
   const photographerCard = `

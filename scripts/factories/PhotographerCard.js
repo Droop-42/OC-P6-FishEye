@@ -13,8 +13,8 @@ class PhotographerCard {
     $wrapper.classList.add('photographer')
 
     const photographerCard = `
-      <a tabindex=0 href="./photographer.html?id=${this._photographer.id}">
-          <img src="${this._photographer.portrait}" alt="Portrait de ${this._photographer.name}" >
+      <a tabindex=0 href="./photographer.html?id=${this._photographer.id}" aria-label="Portrait de ${this._photographer.name}">
+          <img src="${this._photographer.portrait}" alt="" >
           <h2>${this._photographer.name}</h2>
       </a>
       <p class="localisation">${this._photographer.location}</p>
