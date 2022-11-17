@@ -355,6 +355,12 @@ form input {
   max-height: 700px;
 }
 
+.video_carr {
+  background-color: gray;
+  min-width: 400px;
+  min-height: 300px;
+}
+
 .localisation {
   font-size: larger;
   color: #901C1C;

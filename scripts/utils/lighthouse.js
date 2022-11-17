@@ -51,6 +51,7 @@ function getLighthouseDOM (image, video, title, name, index, medias) {
       img.setAttribute('poster', '')
       img.setAttribute('controls', '')
       img.classList.add('media')
+      img.classList.add('video_carr')
     } else {
       img.setAttribute('src', nextImgSrc)
       img.classList.add('media')
@@ -135,6 +136,7 @@ function getLighthouseDOM (image, video, title, name, index, medias) {
     img.setAttribute('src', videoSrc)
     img.setAttribute('poster', '')
     img.setAttribute('controls', '')
+    img.classList.add('video_carr')
   } else {
     img.setAttribute('src', pictureSrc)
   }
