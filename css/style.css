@@ -361,6 +361,16 @@ form input {
   min-height: 300px;
 }
 
+.mediaCont {
+  background-color: gray;
+  min-width: 400px;
+  min-height: 300px;
+  margin: 0;
+  padding: 0;
+  height: auto;
+  width: auto;
+}
+
 .localisation {
   font-size: larger;
   color: #901C1C;

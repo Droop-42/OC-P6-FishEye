@@ -43,6 +43,11 @@ function getLighthouseDOM (image, video, title, name, index, medias) {
     // img.remove();
     const pictureType = getType(nextImage, nextVideo)
     console.log(pictureType)
+
+    const mediaCont = document.createElement('div')
+    mediaCont.classList.add('mediaCont')
+    mediaCont.setAttribute('id', 'samp')
+
     const img = document.createElement(pictureType)
     img.setAttribute('id', 'samp')
     img.setAttribute('src', nextImgSrc)
@@ -65,7 +70,8 @@ function getLighthouseDOM (image, video, title, name, index, medias) {
     h2.textContent = nextTitle
     h2.setAttribute('id', 'titl')
 
-    div.appendChild(img)
+    div.appendChild(mediaCont)
+    mediaCont.appendChild(img)
     div.appendChild(h2)
   }
   // Get next Image from index--------------------
@@ -129,8 +135,13 @@ function getLighthouseDOM (image, video, title, name, index, medias) {
 
   // Media container (image + titre)
   const div = document.createElement('div')
+
+  const mediaCont = document.createElement('div')
+  mediaCont.classList.add('mediaCont')
+  mediaCont.setAttribute('id', 'samp')
+
   const img = document.createElement(getType(image, video))
-  img.setAttribute('id', 'samp')
+  // img.setAttribute('id', 'samp')
   img.classList.add('media')
   if (getType(image, video) === 'video') {
     img.setAttribute('src', videoSrc)
@@ -162,7 +173,8 @@ function getLighthouseDOM (image, video, title, name, index, medias) {
   arrowR.setAttribute('aria-label', 'suivant')
 
   article.appendChild(arrowL)
-  div.appendChild(img)
+  div.appendChild(mediaCont)
+  mediaCont.appendChild(img)
   div.appendChild(h2)
   article.appendChild(div)
   article.appendChild(close)
