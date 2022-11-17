@@ -83,6 +83,7 @@
     max-width: 100%;
     height: auto;
     max-height: 700px;
+    margin: 0;
 }
 
 .video_carr {
@@ -92,11 +93,16 @@
 }
 
 .mediaCont {
-    background-color: gray;
-    min-width: 400px;
-    min-height: 300px;
-    margin: 0;
-    padding: 0;
-    height: auto;
-    width: auto;
+    //background-color: rgb(231, 231, 231);
+    background-image: url("../../assets/images/bar.png");
+    background-position-x: center;
+    background-position-y: center;
+    min-width: 350px;
+    //min-height: 350px;
+    box-sizing: content-box;
+    max-height: 700px;
+    //margin: 0;
+    //padding: 20px;
+    //height: auto;
+    //width: auto;
 }
